@@ -34,5 +34,41 @@ df = pd.DataFrame({
     "score": [85, 72, 85, 91, 72]
 })
 
-print(df.duplicated())
-print(df.drop_duplicates())
+# print(df.duplicated())
+# print(df.drop_duplicates())
+
+
+# Data Types & Conversions
+
+df = pd.DataFrame({
+    "name": ["Alice", "Bob", "Charlie"],
+    "age": ["24", "32", "unknownw"],
+    "score": ["85", "72", "91"]
+})
+
+df["age"] = pd.to_numeric(df["age"], errors="coerce")
+df["score"] = pd.to_numeric(df["score"], errors="coerce")
+
+# print(df.dtypes)
+# print(df)
+
+
+#  GROUPING DATA
+df = pd.DataFrame({
+    "name": ["Alice", "Bob", "Charlie", "David", "Eve"],
+    "country": ["Nigeria", "Ghana", "Nigeria", "Ghana", "Nigeria"],
+    "score": [85, 72, 91, 68, 78]
+})
+
+# print(df.groupby("country")["score"].mean())
+
+# APPLYING TRANSFORMATIONS
+
+df["score_percent"] = df["score"] / 100
+df["name_length"] = df["name"].apply(len)
+
+print(df)
+
+# EXERCISE
+df["passed"] = df["score"] >= 50
+print(df)
