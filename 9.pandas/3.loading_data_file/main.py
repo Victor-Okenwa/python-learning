@@ -22,6 +22,12 @@ print("--------------------------")
 # print(df["spending"])
 
 # Exercise
-print(df["spending"].mean())
-df["spending"] = df["spending"].fillna(df["spending"].mean())
-print(df.loc[7])
+# print(df["spending"].mean())
+# df["spending"] = df["spending"].fillna(df["spending"].mean())
+# print(df.loc[7])
+
+# df.duplicated().sum()
+# print(df[df.duplicated()])
+
+print(df.groupby("country")["spending"].mean()) # Which country has the highest spending?
+
