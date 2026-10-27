@@ -29,5 +29,8 @@ print("--------------------------")
 # df.duplicated().sum()
 # print(df[df.duplicated()])
 
-print(df.groupby("country")["spending"].mean()) # Which country has the highest spending?
-
+# print(df.groupby("country")["spending"].mean()) # Which country has the highest spending?
+# print(df["signup_source"].value_counts()) # How many users signed up from each source?
+# print(df.groupby("country")["orders"].mean()) # average number of orders per country?
+print(df["orders"].corr(df["spending"])) # correlation between orders and spending to check if more orders means more spending?
+print(df["spending"].corr(df["orders"]))
